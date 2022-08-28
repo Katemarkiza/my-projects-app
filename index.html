@@ -61,25 +61,25 @@ button {
   color: #fff;
   padding: 10px 20px;
 }
-.weather-icon {
+weather-icon {
   height: 64px;
   width: 64px;
   margin-right: 10px;
 }
 
-.temperature {
+temperature {
   color: rgb(33, 33, 33);
   font-size: 64px;
   font-weight: 400;
   line-height: 1;
 }
 
-.units {
+units {
   position: relative;
   top: -34px;
 }
 
-.search-form {
+search-form {
   margin-bottom: 20px;
 }
 
@@ -121,8 +121,9 @@ button {
         </ul>
         <div class="row">
           <div class="col-6">
-            <div class="clearfix">
-              <div class="float-left">
+            <div class="clearfix weather-temperature">
+                <img src="" alt="Clear" id="icon" class="float-left" />
+                <div class="float-left">
                 <span class="temperature" id="temperature"></span
                 ><span class="units">°C</span>
               </div>
