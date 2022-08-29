@@ -143,7 +143,7 @@ li:first-letter {
         </ul>
         <div class="row">
           <div class="col-6">
-            <div class="clearfix weather-temperature">
+            <div class="d-flex weather-temperature">
                 <img src="" alt="Clear" id="icon" class="float-left" />
                 <div class="float-left">
          <strong id="temperature"></strong ><span class="units">
@@ -182,7 +182,7 @@ li:first-letter {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
   let day = days[dayIndex];
 
@@ -194,7 +194,6 @@ function displayWeatherCondition(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  <img src="http://openweathermap.org/img/wn/${ forecastDay.weather[0].icon }@2x.png" alt="" width="42" />
 
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
@@ -205,7 +204,7 @@ function displayWeatherCondition(response) {
 }
 
 function searchCity(city) {
-  let apiKey = "82e5c7b273ac4feaa55f7fdcde171f01";
+  let apiKey = "c8ccfe09093c360ab92ce5d129ff41d5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
@@ -217,7 +216,7 @@ function handleSubmit(event) {
 }
 
 function searchLocation(position) {
-  let apiKey = "82e5c7b273ac4feaa55f7fdcde171f01";
+  let apiKey = "c8ccfe09093c360ab92ce5d129ff41d5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayWeatherCondition);
